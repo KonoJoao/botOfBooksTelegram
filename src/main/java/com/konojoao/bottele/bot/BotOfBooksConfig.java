@@ -33,7 +33,7 @@ public class BotOfBooksConfig extends TelegramLongPollingBot {
                 Boolean flagAccountCreated = botOfBooksController.verifyAccountToUploadArchive(update.getMessage().getFrom());
                 if(flagAccountCreated) {
                      messageResponse.setChatId(update.getMessage().getChatId());
-                    if(document.getFileName().endsWith(".pdf") || document.getFileName().endsWith(".mobi")) {
+                    if(document.getFileName().endsWith(".pdf") || document.getFileName().endsWith(".epub")) {
                         try {
                             GetFile getFile = new GetFile();
                             getFile.setFileId(document.getFileId());
